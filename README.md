@@ -1,5 +1,9 @@
 # Simple AMQP to SQL demo
 
+## Setup
+* Ensure you have all your GO paths set up.
+* `go get github.com/hyperized/simple-amqp2sql`
+
 ## Environment
 This demo requires a basic MySQL and RabbitMQ setup.
 

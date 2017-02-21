@@ -72,11 +72,11 @@ func main() {
 
 	// Process incomming messages
 	go func() {
-		for d := range messages {
-			log.Printf("Received a message: %s", d.Body)
+		for message := range messages {
+			log.Printf("Received a message: %s", message.Body)
+
 			// Unmarshall JSON body
-			json.Unmarshal([]byte(d.Body), &messageBody)
-			fmt.Println(messageBody)
+			json.Unmarshal([]byte(message.Body), &messageBody)
 
 			// Insert into DB
 			result, err := statement.Exec(messageBody.Message, messageBody.Content)
